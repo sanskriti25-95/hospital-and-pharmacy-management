@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Hospital Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Patient Dashboard</h1>
+        <div class="header-actions">
+            <select id="patient-select" class="patient-selector">
+                <option value="">Select Patient</option>
+            </select>
+            <button onclick="window.location.href='index.html'" class="btn-secondary">Back to Home</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="loading" class="loading-screen">
+            <div class="spinner"></div>
+            <p>Loading patient data...</p>
+        </div>
+
+        <div id="dashboard-content" class="dashboard-content" style="display: none;">
+            <!-- Patient Info Card -->
+            <div class="info-card patient-info">
+                <h2>Patient Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Name</label>
+                        <span id="p-name">-</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Age</label>
+                        <span id="p-age">-</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Gender</label>
+                        <span id="p-gender">-</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Blood Group</label>
+                        <span id="p-blood">-</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Phone</label>
+                        <span id="p-phone">-</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Email</label>
+                        <span id="p-email">-</span>
+                    </div>
+                    <div class="info-item full-width">
+                        <label>Address</label>
+                        <span id="p-address">-</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Emergency Contact</label>
+                        <span id="p-emergency">-</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Emergency Phone</label>
+                        <span id="p-emergency-phone">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medical Background -->
+            <div class="info-card">
+                <h2>Medical Background</h2>
+                <div class="info-grid">
+                    <div class="info-item full-width">
+                        <label>Allergies</label>
+                        <span id="p-allergies" class="text-content">-</span>
+                    </div>
+                    <div class="info-item full-width">
+                        <label>Chronic Conditions</label>
+                        <span id="p-chronic" class="text-content">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="vitals">Vital Signs</button>
+                <button class="tab-btn" data-tab="history">Medical History</button>
+                <button class="tab-btn" data-tab="prescriptions">Prescriptions</button>
+                <button class="tab-btn" data-tab="reports">Lab Reports</button>
+                <button class="tab-btn" data-tab="appointments">Appointments</button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-content">
+                <!-- Vitals Tab -->
+                <div id="vitals-tab" class="tab-pane active">
+                    <div class="section-header">
+                        <h2>Recent Vital Signs</h2>
+                    </div>
+                    <div id="vitals-list" class="vitals-grid"></div>
+                </div>
+
+                <!-- Medical History Tab -->
+                <div id="history-tab" class="tab-pane">
+                    <div class="section-header">
+                        <h2>Medical History</h2>
+                    </div>
+                    <div id="history-list" class="history-list"></div>
+                </div>
+
+                <!-- Prescriptions Tab -->
+                <div id="prescriptions-tab" class="tab-pane">
+                    <div class="section-header">
+                        <h2>Prescription History</h2>
+                    </div>
+                    <div id="prescriptions-list" class="prescriptions-list"></div>
+                </div>
+
+                <!-- Lab Reports Tab -->
+                <div id="reports-tab" class="tab-pane">
+                    <div class="section-header">
+                        <h2>Lab Reports</h2>
+                    </div>
+                    <div id="reports-list" class="reports-list"></div>
+                </div>
+
+                <!-- Appointments Tab -->
+                <div id="appointments-tab" class="tab-pane">
+                    <div class="section-header">
+                        <h2>Appointment History</h2>
+                    </div>
+                    <div id="appointments-list" class="appointments-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

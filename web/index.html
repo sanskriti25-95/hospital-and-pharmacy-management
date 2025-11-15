@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hospital Management</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/animations.css">
+</head>
+<body>
+  <header>
+    <h1>Hospital Management</h1>
+    <nav>
+      <button id="tab-patients" class="tab active">Patients</button>
+      <button id="tab-doctors" class="tab">Doctors</button>
+      <button id="tab-appointments" class="tab">Appointments</button>
+      <a href="dashboard.html" class="dashboard-link">Patient Dashboard</a>
+    </nav>
+  </header>
+  <main>
+    <section id="patients-section" class="panel">
+      <div class="form">
+        <h2>Add Patient</h2>
+        <input id="p-name" placeholder="Full name" />
+        <input id="p-age" type="number" placeholder="Age" />
+        <select id="p-gender">
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+          <option value="Other">Other</option>
+        </select>
+        <button id="add-patient">Add Patient</button>
+      </div>
+      <div class="list">
+        <h2>Patients</h2>
+        <div id="patients-list">Loading...</div>
+      </div>
+    </section>
+
+    <section id="doctors-section" class="panel hidden">
+      <h2>Doctors</h2>
+      <div id="doctors-list">Loading...</div>
+    </section>
+
+    <section id="appointments-section" class="panel hidden">
+      <div class="form">
+        <h2>Book Appointment</h2>
+        <label>Patient</label>
+        <select id="a-patient"></select>
+        <label>Doctor</label>
+        <select id="a-doctor"></select>
+        <label>Date</label>
+        <input id="a-date" type="date" />
+        <label>Time</label>
+        <select id="a-time">
+          <option value="09:00:00">9:00 AM</option>
+          <option value="09:30:00">9:30 AM</option>
+          <option value="10:00:00">10:00 AM</option>
+          <option value="10:30:00">10:30 AM</option>
+          <option value="11:00:00">11:00 AM</option>
+          <option value="11:30:00">11:30 AM</option>
+          <option value="12:00:00">12:00 PM</option>
+          <option value="12:30:00">12:30 PM</option>
+          <option value="13:00:00">1:00 PM</option>
+          <option value="13:30:00">1:30 PM</option>
+          <option value="14:00:00">2:00 PM</option>
+          <option value="14:30:00">2:30 PM</option>
+          <option value="15:00:00">3:00 PM</option>
+          <option value="15:30:00">3:30 PM</option>
+          <option value="16:00:00">4:00 PM</option>
+          <option value="16:30:00">4:30 PM</option>
+          <option value="17:00:00">5:00 PM</option>
+        </select>
+        <button id="book-appointment">Book Appointment</button>
+        <div id="appointment-message" class="message"></div>
+      </div>
+      <div class="list">
+        <h2>Appointments</h2>
+        <div id="appointments-list">Loading...</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
